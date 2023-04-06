@@ -104,11 +104,17 @@ Please also make sure that the repository is private and that you give the follo
 try {
     const database = await connectToDatabase();
     const user = await getUser(database, 'email@email.com');
-    const settings = await getUserSettings(database, user.id);
+    await getUserSettings(database, user.id);
     const success = await setRole(database, user.id, ADMIN);
     if (success) {
-      await notifyUser(user.id, USER_ROLE_UPDATED);
-      await notifyAdmins(USER_ROLE_UPDATED);
+      const [notifyUserResult, notifyAdminsResult] = await Promise.allSettled([
+        await notifyUser(user.id, USER_ROLE_UPDATED),
+        await notifyAdmins(USER_ROLE_UPDATED)
+      ])
+
+      if (notifyAdminsResult.status === 'rejected' || notifyUserResult.status === 'rejected') {
+        // handle errors
+      }
     }
   } catch (error) {
     // handle errors
