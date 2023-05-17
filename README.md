@@ -1,4 +1,4 @@
-# Tessera-senior-backend-coding-challenge
+# DAI Smart Contract Interacting API
 
 This is a project that aims to create an API that interacts with the DAI smart contract and stores the latest transactions into a PostgreSQL database on a continuous basis. 
 
@@ -10,16 +10,16 @@ The project utilizes popular technologies such as Web3.js, Node.js, and Docker C
 
 ## Content
 
- * [Challenge Form](#challenge-form)
+ * [Form](#form)
  * [Basic Solution](#basic-solution)
  * [Overview of the approach](#overview-of-the-approach)
  * [Usage](#usage)
  * [Improvements](#improvements)
 
 ---
-# Challenge Form
+# Form
 
-Link to the challenge form: https://gist.github.com/TRCSamurai/19e05172204bdfa7202dc30f8ea5fd70
+Link to the form: https://gist.github.com/TRCSamurai/19e05172204bdfa7202dc30f8ea5fd70
 
 ---
 # Basic Solution
@@ -47,9 +47,9 @@ try {
 ---
 # Overview of the approach
 
-## > DAI Smart Contract Interacting Application / API
+## > DAI Smart Contract Interacting API
 
-This is an application / API that interacts with the DAI (a stablecoin on the Ethereum blockchain) smart contract and stores the latest transactions into a PostgreSQL database on a continuous basis (block per block). The API exposes endpoints to retrieve transaction and balance data from the database.
+This is an API that interacts with the DAI (a stablecoin on the Ethereum blockchain) smart contract and stores the latest transactions into a PostgreSQL database on a continuous basis (block per block). The API exposes endpoints to retrieve transaction and balance data from the database.
 
 ## > Tech Stack
 
@@ -105,7 +105,7 @@ The purpose of this application is to provide a way to interact with the DAI sma
 # Usage
 
 1. Clone this repo to your desktop
-- `git clone https://github.com/kev1nramos/tessera-senior-backend-coding-challenge.git`
+- `git clone https://github.com/kev1nramos/api-dai-smart-contract.git`
 2. Go to its root directory
 3. Make sure the docker desktop is up and then run the `docker-compose up -d`.
 Note: If you prefer and want to see the logs, run the `docker-compose up` command.
